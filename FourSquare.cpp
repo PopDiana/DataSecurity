@@ -8,7 +8,7 @@ vector<pair<int,int>>letterPosition2(26);
 vector<pair<int,int>>letterPosition3(26);
 vector<pair<int,int>>letterPosition4(26);
 
-string code(string text)
+string encrypt(string text)
 {
 	if (text.length() % 2 == 1) 
 	{
@@ -23,7 +23,7 @@ string code(string text)
 	return cipher;
 }
 
-string decode(string cipher)
+string decrypt(string cipher)
 {
 	string text(cipher.length(), ' ');
 	for (int i = 0; i < cipher.length(); i += 2)
@@ -158,10 +158,10 @@ int main()
 	
 	createMatrix(key1, key2);
 	
-	string cipher = code(text);
+	string cipher = encrypt(text);
 	
 	cout<<"Ciphertext: "<< cipher << "\n";
-	cout<<"Result: "<< decode(cipher);
+	cout<<"Result: "<< decrypt(cipher);
 	
 	return 0;
 }
